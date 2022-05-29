@@ -14,12 +14,12 @@ enum APIErrors: Error {
     case unsuccesfulStatusCode
 }
 
-protocol GeeksJokeServiceAPIServiceable {
-    func fetchData() -> AnyPublisher<GeekJokesResponseModel, APIErrors>
+protocol ChuckNorrisAPIServiceable {
+    func fetchData() -> AnyPublisher<FactsResponseModel, APIErrors>
 }
 
-class GeeksJokeServiceAPIService: GeeksJokeServiceAPIServiceable {
-    func fetchData() -> AnyPublisher<GeekJokesResponseModel, APIErrors> {
+struct ChuckNorrisAPIService: ChuckNorrisAPIServiceable {
+    func fetchData() -> AnyPublisher<FactsResponseModel, APIErrors> {
         let url = URL(string: "https://geek-jokes.sameerkumar.website/api?format=json")
         guard let url = url else {
             /// Creates a publisher that immediately terminates with the specified failure.
@@ -32,7 +32,7 @@ class GeeksJokeServiceAPIService: GeeksJokeServiceAPIServiceable {
             .receive(on: DispatchQueue.main)
             .map{ $0.data }
             .flatMap {Just($0)}
-            .decode(type: GeekJokesResponseModel.self, decoder: JSONDecoder())
+            .decode(type: FactsResponseModel.self, decoder: JSONDecoder())
             /// Handles the decoding error for the Data received
             .mapError { APIErrors.unableToDecodeTheFact($0) }
             .eraseToAnyPublisher()

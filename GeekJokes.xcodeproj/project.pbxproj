@@ -7,15 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D0578EC4280B39E3005E0355 /* GeekJokesApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EC3280B39E3005E0355 /* GeekJokesApp.swift */; };
-		D0578EC6280B39E3005E0355 /* GeekJokesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EC5280B39E3005E0355 /* GeekJokesContentView.swift */; };
+		D0578EC4280B39E3005E0355 /* Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EC3280B39E3005E0355 /* Window.swift */; };
+		D0578EC6280B39E3005E0355 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EC5280B39E3005E0355 /* ContentView.swift */; };
 		D0578EC8280B39E4005E0355 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0578EC7280B39E4005E0355 /* Assets.xcassets */; };
 		D0578ECB280B39E4005E0355 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D0578ECA280B39E4005E0355 /* Preview Assets.xcassets */; };
 		D0578ED5280B39E4005E0355 /* GeekJokesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578ED4280B39E4005E0355 /* GeekJokesTests.swift */; };
 		D0578EDF280B39E4005E0355 /* GeekJokesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EDE280B39E4005E0355 /* GeekJokesUITests.swift */; };
 		D0578EE1280B39E4005E0355 /* GeekJokesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EE0280B39E4005E0355 /* GeekJokesUITestsLaunchTests.swift */; };
-		D0578EEF280B3AA0005E0355 /* GeekJokesServiceAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EEE280B3AA0005E0355 /* GeekJokesServiceAPI.swift */; };
-		D0578EF1280B41DE005E0355 /* GeekJokesResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EF0280B41DE005E0355 /* GeekJokesResponseModel.swift */; };
+		D0578EEF280B3AA0005E0355 /* APIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EEE280B3AA0005E0355 /* APIService.swift */; };
+		D0578EF1280B41DE005E0355 /* ResponseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0578EF0280B41DE005E0355 /* ResponseModel.swift */; };
 		D0578EF4280B47EE005E0355 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = D0578EF3280B47EE005E0355 /* RxRelay */; };
 		D0578EF6280B47EE005E0355 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0578EF5280B47EE005E0355 /* RxSwift */; };
 		D0EB93DB2839618000686ECC /* ComposableArchitecture in Frameworks */ = {isa = PBXBuildFile; productRef = D0EB93DA2839618000686ECC /* ComposableArchitecture */; };
@@ -44,8 +44,8 @@
 
 /* Begin PBXFileReference section */
 		D0578EC0280B39E3005E0355 /* GeekJokes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GeekJokes.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		D0578EC3280B39E3005E0355 /* GeekJokesApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekJokesApp.swift; sourceTree = "<group>"; };
-		D0578EC5280B39E3005E0355 /* GeekJokesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekJokesContentView.swift; sourceTree = "<group>"; };
+		D0578EC3280B39E3005E0355 /* Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Window.swift; sourceTree = "<group>"; };
+		D0578EC5280B39E3005E0355 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		D0578EC7280B39E4005E0355 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D0578ECA280B39E4005E0355 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D0578ED0280B39E4005E0355 /* GeekJokesTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeekJokesTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -53,8 +53,8 @@
 		D0578EDA280B39E4005E0355 /* GeekJokesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GeekJokesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0578EDE280B39E4005E0355 /* GeekJokesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekJokesUITests.swift; sourceTree = "<group>"; };
 		D0578EE0280B39E4005E0355 /* GeekJokesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekJokesUITestsLaunchTests.swift; sourceTree = "<group>"; };
-		D0578EEE280B3AA0005E0355 /* GeekJokesServiceAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekJokesServiceAPI.swift; sourceTree = "<group>"; };
-		D0578EF0280B41DE005E0355 /* GeekJokesResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeekJokesResponseModel.swift; sourceTree = "<group>"; };
+		D0578EEE280B3AA0005E0355 /* APIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIService.swift; sourceTree = "<group>"; };
+		D0578EF0280B41DE005E0355 /* ResponseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResponseModel.swift; sourceTree = "<group>"; };
 		D0EB93DD283962E700686ECC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		D0EB93DF283962FB00686ECC /* AppActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppActions.swift; sourceTree = "<group>"; };
 		D0EB93E12839630A00686ECC /* AppEnvironment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppEnvironment.swift; sourceTree = "<group>"; };
@@ -114,8 +114,8 @@
 		D0578EC2280B39E3005E0355 /* GeekJokes */ = {
 			isa = PBXGroup;
 			children = (
-				D0578EC3280B39E3005E0355 /* GeekJokesApp.swift */,
-				D0578EC5280B39E3005E0355 /* GeekJokesContentView.swift */,
+				D0578EC3280B39E3005E0355 /* Window.swift */,
+				D0578EC5280B39E3005E0355 /* ContentView.swift */,
 				D0578EC7280B39E4005E0355 /* Assets.xcassets */,
 				D0578EC9280B39E4005E0355 /* Preview Content */,
 			);
@@ -150,8 +150,8 @@
 		D0578EED280B3A84005E0355 /* GeekJokesService */ = {
 			isa = PBXGroup;
 			children = (
-				D0578EEE280B3AA0005E0355 /* GeekJokesServiceAPI.swift */,
-				D0578EF0280B41DE005E0355 /* GeekJokesResponseModel.swift */,
+				D0578EEE280B3AA0005E0355 /* APIService.swift */,
+				D0578EF0280B41DE005E0355 /* ResponseModel.swift */,
 			);
 			path = GeekJokesService;
 			sourceTree = "<group>";
@@ -306,14 +306,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D0578EC6280B39E3005E0355 /* GeekJokesContentView.swift in Sources */,
+				D0578EC6280B39E3005E0355 /* ContentView.swift in Sources */,
 				D0EB93E0283962FB00686ECC /* AppActions.swift in Sources */,
 				D0EB93E4283964E600686ECC /* AppReducer.swift in Sources */,
-				D0578EEF280B3AA0005E0355 /* GeekJokesServiceAPI.swift in Sources */,
+				D0578EEF280B3AA0005E0355 /* APIService.swift in Sources */,
 				D0EB93DE283962E700686ECC /* AppState.swift in Sources */,
 				D0EB93E22839630A00686ECC /* AppEnvironment.swift in Sources */,
-				D0578EC4280B39E3005E0355 /* GeekJokesApp.swift in Sources */,
-				D0578EF1280B41DE005E0355 /* GeekJokesResponseModel.swift in Sources */,
+				D0578EC4280B39E3005E0355 /* Window.swift in Sources */,
+				D0578EF1280B41DE005E0355 /* ResponseModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

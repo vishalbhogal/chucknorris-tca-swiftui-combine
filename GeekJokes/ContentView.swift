@@ -25,7 +25,7 @@ struct ContentView: View {
                         .resizable()
                         .frame(width: 200, height: 200, alignment: .center)
                     
-                    Text(viewStore.currentJoke)
+                    Text(viewStore.currentFact)
                         .font(.system(.body, design: .monospaced))
                         .foregroundColor(.black)
                         .frame(width: 300, height: 200, alignment: .center)
@@ -37,7 +37,7 @@ struct ContentView: View {
                         .font(.system(.headline, design: .monospaced))
                         .fontWeight(.semibold)
                         .foregroundColor(.green)
-                        .onTapGesture{ viewStore.send(.fetchNextJoke)}
+                        .onTapGesture{ viewStore.send(.fetchNextFact)}
                         .padding(.all, 12)
                         .background(.black)
                         .cornerRadius(10)
@@ -49,11 +49,11 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView(store: Store(initialState: .init(currentJoke: "Looks like you wanna read some Norris Facts"),
+        ContentView(store: Store(initialState: .init(currentFact: "Looks like you wanna read some Norris Facts"),
                                  reducer: reducer,
                                  environment: AppEnvironment(mainQueue: .main,
-                                                             joke: {
-            Effect(GeeksJokeServiceAPIService().fetchData())
+                                                             networkRequest: {
+            Effect(ChuckNorrisAPIService().fetchData())
         })))
     }
 }

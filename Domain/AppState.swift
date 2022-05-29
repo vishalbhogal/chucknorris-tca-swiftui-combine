@@ -8,5 +8,5 @@
 import Foundation
 
 struct AppState: Equatable {
-    var currentJoke: String
+    var currentFact: String
 }
