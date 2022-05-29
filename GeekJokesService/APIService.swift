@@ -11,7 +11,6 @@ import Foundation
 enum APIErrors: Error {
     case emptyURL
     case unableToDecodeTheFact(Error)
-    case unsuccesfulStatusCode
 }
 
 protocol ChuckNorrisAPIServiceable {
@@ -25,15 +24,22 @@ struct ChuckNorrisAPIService: ChuckNorrisAPIServiceable {
             /// Creates a publisher that immediately terminates with the specified failure.
             return Fail(error: APIErrors.emptyURL).eraseToAnyPublisher()
         }
-
+        
         let urlRequest = URLRequest(url: url)
         
         let publisher =  URLSession.shared.dataTaskPublisher(for: urlRequest)
             .receive(on: DispatchQueue.main)
+            .filter{
+                guard let responseStatus = $0.response as? HTTPURLResponse,
+                      responseStatus.statusCode == 200 else {
+                    return false
+                }
+                return true
+            }
             .map{ $0.data }
             .flatMap {Just($0)}
             .decode(type: FactsResponseModel.self, decoder: JSONDecoder())
-            /// Handles the decoding error for the Data received
+        /// Handles the decoding error for the Data received
             .mapError { APIErrors.unableToDecodeTheFact($0) }
             .eraseToAnyPublisher()
         
