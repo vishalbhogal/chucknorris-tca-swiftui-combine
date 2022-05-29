@@ -10,5 +10,5 @@ import ComposableArchitecture
 
 struct AppEnvironment {
     let mainQueue: AnySchedulerOf<DispatchQueue>
-    var joke: () -> Effect<GeekJokesResponseModel, Error>
+    var joke: () -> Effect<GeekJokesResponseModel, APIErrors>
 }

@@ -19,8 +19,8 @@ let reducer = Reducer<AppState, AppActions, AppEnvironment> { appState, appActio
             .receive(on: appEnvironment.mainQueue)
             .catchToEffect(AppActions.displayJoke)
         
-    case .displayJoke(.failure(APIErrors.unableToDecodeTheFact(let errorText))):
-        appState.currentJoke = errorText
+    case .displayJoke(.failure(APIErrors.unableToDecodeTheFact(let error))):
+        appState.currentJoke = "Unable to decode the response due to \(error)"
         return .none
         
     case .displayJoke(.failure(APIErrors.emptyURL)):

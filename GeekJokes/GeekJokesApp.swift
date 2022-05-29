@@ -12,7 +12,7 @@ import ComposableArchitecture
 struct GeekJokesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(store: Store(initialState: AppState(currentJoke: "emptyJoke"),
+            ContentView(store: Store(initialState: AppState(currentJoke: ""),
                                      reducer: reducer,
                                      environment: AppEnvironment(mainQueue: .main,
                                                                  joke: {
