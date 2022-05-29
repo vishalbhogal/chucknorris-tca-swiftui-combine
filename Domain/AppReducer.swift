@@ -27,9 +27,6 @@ let reducer = Reducer<AppState, AppActions, AppEnvironment> { appState, appActio
         appState.currentFact = "Sorry mate, Chuck didn't receive the URL"
         return .none
         
-    case .displayFact(.failure(.unsuccesfulStatusCode)):
-        return .none
-        
     case .displayFact(.failure(_)):
         return .none
     }

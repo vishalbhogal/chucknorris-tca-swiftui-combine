@@ -12,12 +12,7 @@ import ComposableArchitecture
 struct GeekJokesApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView(store: Store(initialState: AppState(currentFact: ""),
-                                     reducer: reducer,
-                                     environment: AppEnvironment(mainQueue: .main,
-                                                                 networkRequest: {
-                Effect(ChuckNorrisAPIService().fetchData())
-            })))
+            ContentView()
         }
     }
 }
