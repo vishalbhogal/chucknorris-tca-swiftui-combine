@@ -10,27 +10,27 @@ import ComposableArchitecture
 
 let reducer = Reducer<AppState, AppActions, AppEnvironment> { appState, appActions, appEnvironment in
     switch appActions {
-    case .displayJoke(.success(let jokeResponseModel)):
-        appState.currentJoke = jokeResponseModel.joke
+    case .displayFact(.success(let factResponse)):
+        appState.currentFact = factResponse.fact
         return .none
         
-    case .fetchNextJoke:
-        return appEnvironment.joke()
+    case .fetchNextFact:
+        return appEnvironment.networkRequest()
             .receive(on: appEnvironment.mainQueue)
-            .catchToEffect(AppActions.displayJoke)
+            .catchToEffect(AppActions.displayFact)
         
-    case .displayJoke(.failure(APIErrors.unableToDecodeTheFact(let error))):
-        appState.currentJoke = "Unable to decode the response due to \(error)"
+    case .displayFact(.failure(.unableToDecodeTheFact(let error))):
+        appState.currentFact = "Chuck is unable to decode the error \(error)"
         return .none
         
-    case .displayJoke(.failure(APIErrors.emptyURL)):
-        appState.currentJoke = "Please send the URL"
+    case .displayFact(.failure(.emptyURL)):
+        appState.currentFact = "Sorry mate, Chuck didn't receive the URL"
         return .none
         
-    case .displayJoke(.failure(APIErrors.unsuccesfulStatusCode)):
+    case .displayFact(.failure(.unsuccesfulStatusCode)):
         return .none
         
-    case .displayJoke(.failure(_)):
+    case .displayFact(.failure(_)):
         return .none
     }
 }
