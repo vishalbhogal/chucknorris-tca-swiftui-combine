@@ -8,6 +8,6 @@
 import Foundation
 
 enum AppActions {
-    case displayJoke(Result<GeekJokesResponseModel, Error>)
+    case displayJoke(Result<GeekJokesResponseModel, APIErrors>)
     case fetchNextJoke
 }
